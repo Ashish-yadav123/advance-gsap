@@ -4,12 +4,11 @@ import boxGif from "../assets/images/gif/rotating-box.gif";
 const Hero = () => {
   return (
     <div>
-      {" "}
       <div className="section_1 relative h-screen bg-[red] text-start text-white flex items-center justify-center">
         <div className="container xl:max-w-[1170px] 2xl:max-w-[1320px]">
           <div className="flex items-center justify-between">
             <div className="w-[48%]">
-              <h1>FIRST DIV ANIMATION PARENT</h1>
+              <h1 className="text-4xl">HERO ANIMATION PARENT</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
                 voluptates temporibus assumenda autem mollitia rerum laborum

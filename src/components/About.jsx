@@ -8,7 +8,7 @@ const About = () => {
         <div className="container xl:max-w-[1170px] 2xl:max-w-[1320px]">
           <div className="flex items-center justify-between">
             <div className="w-[48%]">
-              <h1>SECOND DIV ANIMATION PARENT</h1>
+              <h1 className="text-4xl">ABOUT ANIMATION PARENT</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
                 voluptates temporibus assumenda autem mollitia rerum laborum
