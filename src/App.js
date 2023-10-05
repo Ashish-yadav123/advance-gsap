@@ -69,7 +69,7 @@ function App() {
       },
       {
         left: `${leftValue}px`,
-        top: `${fullPageHeight - topValue + 250}px`,
+        top: `${fullHeight - topValue + 250}px`,
         width: "100px",
       }
     );
@@ -85,16 +85,16 @@ function App() {
     tl.fromTo(
       ".moving_img",
       {
-        left: `50%`,
-        xPercent: -50,
-        yPercent: -50,
-        top: `${fullPageHeight - topValue + 250}px`,
+        left: `${leftValue}px`,
+        top: `${fullHeight - topValue + 250}px`,
         width: "100px",
       },
       {
-        left: `${leftValue}px`,
-        top: `${fullPageHeight - topValue + 250}px`,
-        width: "100px",
+        left: `50%`,
+        top: `50%`,
+        xPercent: -50,
+        yPercent: -50,
+        width: "100%",
       }
     );
   }, []);
