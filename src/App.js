@@ -19,8 +19,8 @@ function App() {
     gsap.set(".moving_div", {
       xPercent: 0,
       yPercent: 0,
-      width: 400,
-      height: 400,
+      width: 300,
+      height: 300,
     });
   }, []);
   useLayoutEffect(() => {
@@ -39,14 +39,14 @@ function App() {
       {
         xPercent: 0,
         yPercent: 0,
-        width: 400,
-        height: 400,
+        width: 300,
+        height: 300,
       },
       {
         yPercent: 184,
         xPercent: -152,
-        width: 350,
-        height: 350,
+        width: 250,
+        height: 250,
         rotate: 180,
         ease: "power1.out",
       }
@@ -81,8 +81,12 @@ function App() {
     <>
       <div>
         <div className="z-[111] absolute left-1/2 top-[35vh]">
-          <div className="moving_div flex items-center justify-center">
-            <img src={boxGif} alt="boxGif" />
+          <div className="bg-white w-[400px] h-[400px] flex items-center justify-center p-[30px]">
+            <img
+              className="moving_div w-full h-full"
+              src={boxGif}
+              alt="boxGif"
+            />
           </div>
         </div>
         <Hero />

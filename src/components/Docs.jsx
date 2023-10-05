@@ -7,7 +7,7 @@ const Docs = () => {
         <div className="container xl:max-w-[1170px] 2xl:max-w-[1320px]">
           <div className="flex items-center justify-between">
             <div className="w-[48%]">
-              <div className="white_big_div"></div>
+              <div className="h-[400px] w-[400px] bg-white"></div>
             </div>
             <div className="w-[48%]">
               <h1 className="text-4xl">DOCS ANIMATION PARENT</h1>
@@ -20,7 +20,7 @@ const Docs = () => {
                 quisquam vitae ipsa eligendi, numquam, iste voluptatum vel neque
                 quos perferendis.
               </p>
-            </div>{" "}
+            </div>
           </div>
         </div>
       </div>

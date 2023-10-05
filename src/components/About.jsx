@@ -19,7 +19,7 @@ const About = () => {
               </p>
             </div>{" "}
             <div className="w-[48%] flex justify-end">
-              <div className="white_big_div"></div>
+              <div className="h-[400px] w-[400px] bg-white"></div>
             </div>
           </div>
         </div>

@@ -3,33 +3,3 @@
 @tailwind utilities;
 
 /* MOVING DIV ANIMATION */
-.moving_div {
-  width: 400px;
-  height: 400px;
-  background-color: white;
-}
-.white_big_div {
-  width: 400px;
-  height: 400px;
-  background-color: white;
-}
-.section_3_small_div {
-  width: 75px;
-  height: 75px;
-  background-color: white;
-}
-.section_6_yellow_box {
-  width: 200px;
-  height: 200px;
-  background-color: yellow;
-}
-.section_6_center_box {
-  width: 300px;
-  height: 500px;
-  background-color: white;
-}
-.section_6_black_box {
-  width: 200px;
-  height: 200px;
-  background-color: black;
-}
