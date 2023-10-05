@@ -15,8 +15,8 @@ import Service from "./components/Service";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  // const fullPageHeight = window.innerHeight;
-  const fullHeight = document.documentElement.scrollHeight;
+  const fullPageHeight = window.innerHeight;
+  // const fullHeight = document.documentElement.scrollHeight;
 
   const [leftValue, setLeftValue] = useState(0);
   const [topValue, setTopValue] = useState(0);
@@ -69,40 +69,52 @@ function App() {
       },
       {
         left: `${leftValue}px`,
-        top: `${fullHeight - topValue + 250}px`,
+        top: `${fullPageHeight - topValue + 250}px`,
         width: "100px",
       }
     );
     const section3 = gsap.timeline({
       scrollTrigger: {
-        trigger: ".section_3",
-        start: "top top",
+        trigger: ".section_2",
+        start: "center center",
         end: "bottom top",
         scrub: true,
         markers: true,
       },
     });
-    tl.fromTo(
-      ".moving_img",
-      {
-        left: `${leftValue}px`,
-        top: `${fullHeight - topValue + 250}px`,
-        width: "100px",
-      },
-      {
-        left: `50%`,
-        top: `50%`,
-        xPercent: -50,
-        yPercent: -50,
-        width: "100%",
-      }
-    );
+    section3
+      .fromTo(
+        ".moving_img",
+        {
+          left: `${leftValue}px`,
+          top: `${fullPageHeight + 250}px`,
+          width: "100px",
+        },
+        {
+          left: `50%`,
+          xPercent: -50,
+          y: "50vh",
+          top: `${fullPageHeight + 382}px`,
+          width: "100%",
+        }
+      )
+      .fromTo(
+        ".moving_img",
+        {
+          maxWidth: "300px",
+          maxHeight: "100vh",
+        },
+        {
+          maxWidth: "100%",
+          maxHeight: "100vh",
+        }
+      );
   }, []);
   return (
     <>
       <div>
         <img
-          className="moving_img absolute z-[1] max-w-[300px]"
+          className="moving_img absolute z-[1] max-w-[300px] object-cover"
           ref={imageRef}
           src={boxGif}
           alt="boxGif"

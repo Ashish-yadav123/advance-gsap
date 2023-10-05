@@ -4,7 +4,7 @@ const Service = () => {
   return (
     <div>
       {" "}
-      <div className="section_3 h-screen bg-white text-start text-black flex items-center justify-center">
+      <div className="section_3 h-screen bg-white text-start text-black flex items-center justify-center relative">
         <div className="container xl:max-w-[1170px] 2xl:max-w-[1320px]">
           <div className="flex items-center justify-center">
             <div className="w-[48%]">
