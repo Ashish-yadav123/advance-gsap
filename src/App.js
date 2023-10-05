@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import gsap from "gsap/dist/gsap";
 import { useLayoutEffect } from "react";
+import boxGif from "../src/assets/images/gif/rotating-box.gif";
 import About from "./components/About";
 import Blog from "./components/Blog";
 import Docs from "./components/Docs";
@@ -62,7 +63,6 @@ function App() {
 
     boxmove2.fromTo(
       ".moving_div",
-
       {
         yPercent: 184,
         xPercent: -152,
@@ -76,60 +76,15 @@ function App() {
         scale: 0.2,
       }
     );
-
-    const textmove = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".section_3",
-        start: "-100% top",
-        end: "bottom top",
-        scrub: 1,
-        yoyo: true,
-        markers: false,
-      },
-    });
-
-    textmove.fromTo(
-      ".section_3_text",
-      {
-        xPercent: 0,
-      },
-      {
-        xPercent: 30,
-      }
-    );
-    textmove.to(".section_3_text", {
-      xPercent: 0,
-    });
-
-    const boxmove3 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".section_3",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-        markers: false,
-      },
-    });
-
-    boxmove3.fromTo(
-      ".moving_div",
-
-      {
-        yPercent: 340,
-        xPercent: -200,
-      },
-      {
-        yPercent: 550,
-        xPercent: -50,
-        scale: 1,
-        width: 350,
-        height: 350,
-      }
-    );
   }, []);
   return (
     <>
       <div>
+        <div className="z-[111] absolute left-1/2 top-[35vh]">
+          <div className="moving_div flex items-center justify-center">
+            <img src={boxGif} alt="boxGif" />
+          </div>
+        </div>
         <Hero />
         <About />
         <Service />

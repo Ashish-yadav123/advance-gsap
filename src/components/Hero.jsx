@@ -1,5 +1,4 @@
 import React from "react";
-import boxGif from "../assets/images/gif/rotating-box.gif";
 
 const Hero = () => {
   return (
@@ -18,11 +17,6 @@ const Hero = () => {
                 quisquam vitae ipsa eligendi, numquam, iste voluptatum vel neque
                 quos perferendis.
               </p>
-            </div>{" "}
-            <div className="w-[48%] flex justify-end">
-              <div className="moving_div flex items-center justify-center">
-                <img src={boxGif} alt="boxGif" />
-              </div>
             </div>
           </div>
         </div>
