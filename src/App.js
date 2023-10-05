@@ -37,17 +37,16 @@ function App() {
     boxmove.fromTo(
       ".moving_div",
       {
-        xPercent: 0,
-        yPercent: 0,
+        x: 0,
+        y: 0,
         width: 300,
         height: 300,
       },
       {
-        yPercent: 184,
-        xPercent: -152,
+        y: "200%",
+        x: -152,
         width: 250,
         height: 250,
-        rotate: 180,
         ease: "power1.out",
       }
     );
@@ -79,15 +78,9 @@ function App() {
   }, []);
   return (
     <>
-      <div>
-        <div className="z-[111] absolute left-1/2 top-[35vh]">
-          <div className="bg-white w-[400px] h-[400px] flex items-center justify-center p-[30px]">
-            <img
-              className="moving_div w-full h-full"
-              src={boxGif}
-              alt="boxGif"
-            />
-          </div>
+      <div className="relative">
+        <div className="bg-white w-[400px] h-[400px] flex items-center justify-center z-[111] absolute left-1/2 top-[2%]">
+          <img className="moving_div w-full h-full" src={boxGif} alt="boxGif" />
         </div>
         <Hero />
         <About />
