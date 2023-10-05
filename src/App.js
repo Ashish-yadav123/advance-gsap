@@ -1,5 +1,5 @@
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
-import React, { useEffect } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import gsap from "gsap/dist/gsap";
 import { useLayoutEffect } from "react";
@@ -13,77 +13,72 @@ import Hero from "./components/Hero";
 import News from "./components/News";
 import Service from "./components/Service";
 
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
-  gsap.registerPlugin(ScrollTrigger);
+  const [leftValue, setLeftValue] = useState(0);
+  const [topValue, setTopValue] = useState(0);
+  const [imageHeight, setImageHeight] = useState(0);
+
+  const containerRef = useRef(null);
+  const imageRef = useRef(null);
   useEffect(() => {
-    gsap.set(".moving_div", {
-      xPercent: 0,
-      yPercent: 0,
-      width: 300,
-      height: 300,
+    if (containerRef.current) {
+      setLeftValue(containerRef.current.getBoundingClientRect().left);
+      setTopValue(containerRef.current.getBoundingClientRect().top);
+    }
+    if (imageRef.current) {
+      setImageHeight(imageRef.current.getBoundingClientRect().height);
+    }
+    window.addEventListener("resize", () => {
+      if (containerRef.current) {
+        setLeftValue(containerRef.current.getBoundingClientRect().left);
+        setTopValue(containerRef.current.getBoundingClientRect().top);
+      }
+      if (imageRef.current) {
+        setImageHeight(imageRef.current.getBoundingClientRect().height);
+      }
     });
-  }, []);
-  useLayoutEffect(() => {
-    const boxmove = gsap.timeline({
+  }, [leftValue, topValue, imageHeight]);
+  console.log(leftValue);
+
+  useEffect(() => {
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".section_1",
         start: "top top",
         end: "bottom top",
-        scrub: 1,
+        scrub: true,
         markers: true,
       },
     });
-
-    boxmove.fromTo(
-      ".moving_div",
+    tl.fromTo(
+      ".moving_img",
       {
-        x: 0,
-        y: 0,
-        width: 300,
-        height: 300,
+        left: "54%",
+        top: "35%",
+        width: "100%",
       },
       {
-        y: "200%",
-        x: -152,
-        width: 250,
-        height: 250,
-        ease: "power1.out",
-      }
-    );
-    const boxmove2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".section_2",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-        markers: false,
-      },
-    });
-
-    boxmove2.fromTo(
-      ".moving_div",
-      {
-        yPercent: 184,
-        xPercent: -152,
-        width: 350,
-        height: 350,
-        ease: "power1.out",
-      },
-      {
-        yPercent: 340,
-        xPercent: -200,
-        scale: 0.2,
+        left: `${leftValue}px`,
+        top: `${topValue}px`,
+        width: "20px",
       }
     );
   }, []);
   return (
     <>
-      <div className="relative">
-        <div className="bg-white w-[400px] h-[400px] flex items-center justify-center z-[111] absolute left-1/2 top-[2%]">
-          <img className="moving_div w-full h-full" src={boxGif} alt="boxGif" />
-        </div>
+      <div>
+        <img
+          className="moving_img absolute z-[1] max-w-[300px]"
+          ref={imageRef}
+          src={boxGif}
+          alt="boxGif"
+        />
         <Hero />
-        <About />
+        <div className="section_2">
+          <About />
+        </div>
         <Service />
         <Blog />
         <Docs />

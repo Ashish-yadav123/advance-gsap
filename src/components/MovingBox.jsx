@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import boxGif from "../assets/rotating-box.gif";
+import boxGif from "../assets/images/gif/rotating-box.gif";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -83,6 +83,7 @@ const MovingBox = () => {
             </div>
           </div>
         </div>
+
         <div className="section_2 vh-100 bg-success text-start text-white d-flex align-items-center justify-content-center">
           <div className="container">
             <div className="row align-items-center justify-content-between">

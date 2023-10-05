@@ -18,6 +18,9 @@ const Hero = () => {
                 quos perferendis.
               </p>
             </div>
+            <div className="w-[48%]">
+              <div className="bg-white w-[400px] h-[400px] flex items-center justify-center"></div>
+            </div>
           </div>
         </div>
       </div>
