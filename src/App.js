@@ -60,8 +60,8 @@ function App() {
     });
   }, [rightValue]);
 
-  console.log(topValue);
-  console.log(leftValue, "dfghjk");
+  console.log(topValue, "topValue");
+  console.log(leftValue, "leftValue");
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -70,7 +70,7 @@ function App() {
         start: "top top",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     tl.fromTo(
@@ -94,7 +94,7 @@ function App() {
         start: "40% top",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     tl2.fromTo(
@@ -120,7 +120,7 @@ function App() {
         start: "30% top",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     tl3.fromTo(
@@ -148,7 +148,7 @@ function App() {
         start: "30% top",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     tl4.fromTo(
@@ -176,7 +176,7 @@ function App() {
         start: "30% top",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     tl5.fromTo(
@@ -204,7 +204,7 @@ function App() {
         start: "30% top",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     tl6.fromTo(
