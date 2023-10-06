@@ -16,7 +16,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const fullPageHeight = window.innerHeight;
-  // const fullHeight = document.documentElement.scrollHeight;
+  const fullHeight = document.documentElement.scrollHeight;
+  console.log(fullPageHeight, fullHeight, "height");
 
   const [leftValue, setLeftValue] = useState(0);
   const [rightValue, setRightValue] = useState(0);
@@ -69,99 +70,162 @@ function App() {
         start: "top top",
         end: "bottom top",
         scrub: true,
-        markers: false,
+        markers: true,
       },
     });
     tl.fromTo(
       ".moving_img",
       {
-        left: "54%",
-        top: "35%",
+        left: "66vw",
+        top: "50vh",
+        yPercent: -50,
         width: "100%",
       },
       {
-        left: `${leftValue}px`,
-        top: `${fullPageHeight - topValue + 250}px`,
-        width: "100px",
+        left: "2%",
+        top: `135vh`,
+        width: "20px",
+        yPercent: 0,
       }
     );
-    const section3 = gsap.timeline({
+    const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".section_2",
-        start: "center center",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-    });
-    section3
-      .fromTo(
-        ".moving_img",
-        {
-          left: `${leftValue}px`,
-          top: `${fullPageHeight + 250}px`,
-          width: "100px",
-        },
-        {
-          left: `50%`,
-          xPercent: -50,
-          y: "50vh",
-          top: `${fullPageHeight + 382}px`,
-          width: "100%",
-        }
-      )
-      .fromTo(
-        ".moving_img",
-        {
-          maxWidth: "300px",
-          maxHeight: "100vh",
-        },
-        {
-          maxWidth: "100%",
-          maxHeight: "100vh",
-        }
-      );
-    const section4 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".section_3",
-        start: "center center",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-    });
-    section4.fromTo(
-      ".moving_img",
-      {
-        maxWidth: "100%",
-        maxHeight: "100vh",
-      },
-      {
-        right: `${rightValue}px`,
-        top: `${fullPageHeight - topValue + 1150}px`,
-        width: "100px",
-      }
-    );
-    const section5 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".section_4",
-        start: "center center",
+        start: "40% top",
         end: "bottom top",
         scrub: true,
         markers: true,
       },
     });
-    section5.fromTo(
+    tl2.fromTo(
       ".moving_img",
       {
-        right: `${rightValue}px`,
-        top: `${fullPageHeight - topValue + 1150}px`,
-        width: "100px",
+        left: "2%",
+        top: `150vh`,
+        maxWidth: "300px",
+        width: "20px",
       },
       {
-        right: `${rightValue}px`,
-        top: `${fullPageHeight - topValue + 1850}px`,
-        width: "100px",
+        left: "50%",
+        xPercent: -50,
+        top: `200vh`,
+        maxWidth: "100%",
+        maxHeight: "100vh",
+        width: "100%",
+      }
+    );
+    const tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section_3",
+        start: "30% top",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+    });
+    tl3.fromTo(
+      ".moving_img",
+      {
+        left: "50%",
+        xPercent: -50,
+        top: `200vh`,
+        maxWidth: "100%",
+        maxHeight: "100vh",
+        yPercent: 0,
+      },
+      {
+        left: "62vw",
+        xPercent: 0,
+        top: `350vh`,
+        maxWidth: "300px",
+        maxHeight: "100vh",
+        yPercent: -50,
+      }
+    );
+    const tl4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section_4",
+        start: "30% top",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+    });
+    tl4.fromTo(
+      ".moving_img",
+      {
+        left: "62vw",
+        xPercent: 0,
+        top: `350vh`,
+        maxWidth: "300px",
+        maxHeight: "100vh",
+        yPercent: -50,
+      },
+      {
+        left: "9vw",
+        xPercent: 0,
+        top: `450vh`,
+        maxWidth: "300px",
+        maxHeight: "100vh",
+        yPercent: -50,
+      }
+    );
+    const tl5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section_5",
+        start: "30% top",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+    });
+    tl5.fromTo(
+      ".moving_img",
+      {
+        left: "9vw",
+        xPercent: 0,
+        top: `450vh`,
+        maxWidth: "300px",
+        maxHeight: "100vh",
+        yPercent: -50,
+      },
+      {
+        left: "50vw",
+        xPercent: -50,
+        top: `550vh`,
+        maxWidth: "300px",
+        maxHeight: "100vh",
+        yPercent: -50,
+      }
+    );
+    const tl6 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section_6",
+        start: "30% top",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+    });
+    tl6.fromTo(
+      ".moving_img",
+      {
+        left: "50vw",
+        xPercent: -50,
+        top: `550vh`,
+        maxWidth: "300px",
+        maxHeight: "100vh",
+        yPercent: -50,
+        width: "100%",
+      },
+      {
+        left: "5vw",
+        xPercent: -50,
+        top: `640vh`,
+        maxWidth: "300px",
+        maxHeight: "100vh",
+        yPercent: -50,
+        width: "50px",
       }
     );
   }, []);

@@ -8,9 +8,6 @@ const Blog = () => {
         <div className="container xl:max-w-[1170px] 2xl:max-w-[1320px]">
           <div className="flex items-center justify-between">
             <div className="w-[48%]">
-              <div className="h-[400px] w-[400px] bg-white"></div>
-            </div>
-            <div className="w-[48%]">
               <h1 className="text-4xl">BLOG ANIMATION PARENT</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
@@ -22,6 +19,9 @@ const Blog = () => {
                 quos perferendis.
               </p>
             </div>{" "}
+            <div className="w-[40%]">
+              <div className="h-[400px] w-[400px] bg-white"></div>
+            </div>
           </div>
         </div>
       </div>
