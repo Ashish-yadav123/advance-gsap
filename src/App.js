@@ -1,6 +1,6 @@
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import gsap from "gsap/dist/gsap";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import boxGif from "../src/assets/images/gif/rotating-box.gif";
 import "./App.css";
 import About from "./components/About";
@@ -64,6 +64,16 @@ function App() {
   console.log(leftValue, "leftValue");
 
   useEffect(() => {
+    gsap.set(".moving_img", {
+      left: "60%",
+      top: "50%",
+      xPercent: -30,
+      yPercent: -50,
+      maxWidth: "300px",
+    });
+  }, []);
+
+  useLayoutEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".section_1",
