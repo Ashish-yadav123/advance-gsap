@@ -181,12 +181,18 @@ function App() {
         <div className="section_3">
           <Service containerRef={containerRef} />
         </div>
-        <div className="section_3">
+        <div className="section_4">
           <Blog containerRef={containerRef} />
         </div>
-        <Docs />
-        <News />
-        <Faqs />
+        <div className="section_5">
+          <Docs />
+        </div>
+        <div className="section_6">
+          <News />
+        </div>
+        <div className="section_7">
+          <Faqs />
+        </div>
         <Footer />
       </div>
     </>
