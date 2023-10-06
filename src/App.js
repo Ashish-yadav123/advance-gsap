@@ -19,6 +19,7 @@ function App() {
   // const fullHeight = document.documentElement.scrollHeight;
 
   const [leftValue, setLeftValue] = useState(0);
+  const [rightValue, setRightValue] = useState(0);
   const [topValue, setTopValue] = useState(0);
   const containerRef = useRef(null);
   const imageRef = useRef(null);
@@ -46,6 +47,17 @@ function App() {
       }
     });
   }, [leftValue]);
+  useEffect(() => {
+    if (containerRef.current) {
+      setRightValue(containerRef.current.getBoundingClientRect().right);
+    }
+
+    window.addEventListener("resize", () => {
+      if (containerRef.current) {
+        setRightValue(containerRef.current.getBoundingClientRect().right);
+      }
+    });
+  }, [rightValue]);
 
   console.log(topValue);
   console.log(leftValue, "dfghjk");
@@ -57,7 +69,7 @@ function App() {
         start: "top top",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     tl.fromTo(
@@ -79,7 +91,7 @@ function App() {
         start: "center center",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     section3
@@ -109,6 +121,49 @@ function App() {
           maxHeight: "100vh",
         }
       );
+    const section4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section_3",
+        start: "center center",
+        end: "bottom top",
+        scrub: true,
+        markers: false,
+      },
+    });
+    section4.fromTo(
+      ".moving_img",
+      {
+        maxWidth: "100%",
+        maxHeight: "100vh",
+      },
+      {
+        right: `${rightValue}px`,
+        top: `${fullPageHeight - topValue + 1150}px`,
+        width: "100px",
+      }
+    );
+    const section5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section_4",
+        start: "center center",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+    });
+    section5.fromTo(
+      ".moving_img",
+      {
+        right: `${rightValue}px`,
+        top: `${fullPageHeight - topValue + 1150}px`,
+        width: "100px",
+      },
+      {
+        right: `${rightValue}px`,
+        top: `${fullPageHeight - topValue + 1850}px`,
+        width: "100px",
+      }
+    );
   }, []);
   return (
     <>
@@ -123,8 +178,12 @@ function App() {
         <div className="section_2">
           <About containerRef={containerRef} />
         </div>
-        <Service />
-        <Blog />
+        <div className="section_3">
+          <Service containerRef={containerRef} />
+        </div>
+        <div className="section_3">
+          <Blog containerRef={containerRef} />
+        </div>
         <Docs />
         <News />
         <Faqs />

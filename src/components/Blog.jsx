@@ -1,6 +1,6 @@
 import React from "react";
 
-const Blog = () => {
+const Blog = ({ containerRef }) => {
   return (
     <div>
       {" "}
@@ -11,7 +11,9 @@ const Blog = () => {
               <div className="h-[400px] w-[400px] bg-white"></div>
             </div>
             <div className="w-[48%]">
-              <h1 className="text-4xl">BLOG ANIMATION PARENT</h1>
+              <h1 ref={containerRef} className="text-4xl">
+                BLOG ANIMATION PARENT
+              </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
                 voluptates temporibus assumenda autem mollitia rerum laborum
